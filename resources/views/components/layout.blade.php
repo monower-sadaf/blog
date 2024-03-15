@@ -10,7 +10,7 @@
 
 <body class="bg-gray-100">
     <x-navbar />
-    <section class="container mx-auto min-h-screen">
+    <section class="container mx-auto px-2 lg:px-4 min-h-[82.5vh]">
         {{
             $slot
         }}
