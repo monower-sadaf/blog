@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,5 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
-Route::get('/posts', function () {
-    return view('pages.posts');
-})->name('posts');
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts');
