@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,9 @@ Route::get('/contact', function () {
 
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
+
+Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
+
+Route::name('admin.')->prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('index');
+});
