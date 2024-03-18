@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('image_path')->nullable();
             $table->string('tags')->nullable();
-            $table->int('category_id');
+            $table->integer('category_id');
             $table->boolean('status')->default(0);
             $table->timestamps();
         });
@@ -31,3 +31,7 @@ return new class extends Migration
         Schema::dropIfExists('posts');
     }
 };
+
+?>
+
+
