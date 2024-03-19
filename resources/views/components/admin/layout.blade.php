@@ -390,9 +390,8 @@
                         </span>
                     </button>
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="#">View</a>
-                        <a href="#">Create</a>
-                        <a href="#">Update</a>
+                        <a href="{{ route('admin.posts.index') }}" class="!bg-white hover:!bg-[#11101d] hover:!text-white">View</a>
+                        <a href="#" class="!bg-white hover:!bg-[#11101d] hover:!text-white">Create</a>
                     </div>
                 </div>
                 <span class="tooltip">Posts</span>

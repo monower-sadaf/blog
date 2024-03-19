@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,5 @@ Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
+    Route::get('/posts', [AdminPostController::class, 'index'])->name('posts.index');
 });
