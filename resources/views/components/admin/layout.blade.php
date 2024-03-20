@@ -10,6 +10,7 @@
 
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
     <style>
         * {
             margin: 0;
@@ -364,7 +365,7 @@
                 <span class="tooltip">Search</span>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('admin.index') }}">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -391,7 +392,7 @@
                     </button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="{{ route('admin.posts.index') }}" class="!bg-white hover:!bg-[#11101d] hover:!text-white">View</a>
-                        <a href="#" class="!bg-white hover:!bg-[#11101d] hover:!text-white">Create</a>
+                        <a href="{{ route('admin.posts.create') }}" class="!bg-white hover:!bg-[#11101d] hover:!text-white">Create</a>
                     </div>
                 </div>
                 <span class="tooltip">Posts</span>

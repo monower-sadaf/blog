@@ -36,4 +36,7 @@ Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::get('/posts', [AdminPostController::class, 'index'])->name('posts.index');
+    Route::get('/posts/create', [AdminPostController::class, 'create'])->name('posts.create');
+    Route::post('posts/create', [AdminPostController::class, 'store'])->name('posts.store');
+    Route::post('/upload', [AdminPostController::class, 'ck_upload'])->name('ck.upload');
 });
