@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class AdminPostController extends Controller
 {
@@ -17,8 +18,21 @@ class AdminPostController extends Controller
     }
 
     public function store(Request $request){
+        $originName = $request->file('image')->getClientOriginalName();
+        $fileName = pathinfo($originName, PATHINFO_FILENAME);
+        $extension = $request->file('image')->getClientOriginalExtension();
+        $fileName = $fileName . '_' . time() . '.' . $extension;
+        Storage::disk('local')->put('public/images/' . $fileName, file_get_contents($request->file('image')->getRealPath()));
 
-        return $request->all();
+        Post::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image_path' => $fileName,
+            'category_id' => $request->category_id,
+            'status'=> $request->status
+        ]);
+        
+        return redirect()->route('admin.posts.index');
         /* $request->validate([
             'title' => 'required',
             'content' => 'required',
