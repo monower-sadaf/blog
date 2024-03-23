@@ -45,7 +45,7 @@
                 <legend>
                     <label for="category">Category</label>
                 </legend>
-                <select name="category" id="category" class="w-full p-2 focus:outline-none focus:ring-0 bg-white">
+                <select name="category_id" id="category" class="w-full p-2 focus:outline-none focus:ring-0 bg-white">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

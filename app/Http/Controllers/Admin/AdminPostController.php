@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Storage;
 class AdminPostController extends Controller
 {
     public function index(){
-        return view('pages.admin.posts.index');
+        $posts = Post::where('status', 1)->get();
+        return view('pages.admin.posts.index', compact('posts'));
     }
 
     public function create(){
@@ -52,6 +53,12 @@ class AdminPostController extends Controller
             return redirect()->back();
         } */
 
+    }
+
+
+    public function show($id){
+        $post = Post::find($id);
+        return view('pages.admin.posts.show', compact('post'));
     }
 
     public function ck_upload(Request $request){
